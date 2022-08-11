@@ -6,15 +6,15 @@
   
   <title>vector | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Vector的一些常见的用法 要想使用vector，则需要加入头文件 #include &lt;*vector*&gt;并且要在头文件的下面加上 using namespace std;,这样就可以在代码中使用vector了      1.vector的定义 vector&lt;*typename*&gt; name;    vector&lt;*int*&gt; name;   vector&amp;l">
+  <meta name="description" content="Vector的一些常见的用法 要想使用vector，则需要加入头文件 #include &lt;*vector*&gt;并且要在头文件的下面加上 using namespace std;,这样就可以在代码中使用vector了      1.vector的定义 vector&lt;typename&gt; name;    vector&lt;int&gt; name;   vector&lt;ch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vector">
 <meta property="og:url" content="http://example.com/2022/08/11/vector/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Vector的一些常见的用法 要想使用vector，则需要加入头文件 #include &lt;*vector*&gt;并且要在头文件的下面加上 using namespace std;,这样就可以在代码中使用vector了      1.vector的定义 vector&lt;*typename*&gt; name;    vector&lt;*int*&gt; name;   vector&amp;l">
+<meta property="og:description" content="Vector的一些常见的用法 要想使用vector，则需要加入头文件 #include &lt;*vector*&gt;并且要在头文件的下面加上 using namespace std;,这样就可以在代码中使用vector了      1.vector的定义 vector&lt;typename&gt; name;    vector&lt;int&gt; name;   vector&lt;ch">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-11T13:34:13.000Z">
-<meta property="article:modified_time" content="2022-08-11T13:36:18.017Z">
+<meta property="article:modified_time" content="2022-08-11T13:41:35.564Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="C++_STL">
 <meta name="twitter:card" content="summary">
@@ -100,23 +100,23 @@
 <p>要想使用<strong>vector</strong>，则需要加入头文件 #include &lt;*vector*&gt;<br>并且要在头文件的下面加上 <strong>using namespace std;</strong>,这样就可以在代码中使用<strong>vector</strong>了    </p>
 </blockquote>
 <h2 id="1-vector的定义"><a href="#1-vector的定义" class="headerlink" title="1.vector的定义"></a>1.vector的定义</h2><blockquote>
-<p>vector&lt;*typename*&gt; name;  </p>
+<p><code>vector&lt;typename&gt; name;</code>  </p>
 <ul>
-<li>vector&lt;*int*&gt; name;  </li>
-<li>vector&lt;*char*&gt; name;  </li>
-<li>vector&lt;*double*&gt; name;</li>
+<li><code>vector&lt;int&gt; name; </code> </li>
+<li><code>vector&lt;char&gt; name;</code>  </li>
+<li><code>vector&lt;double&gt; name;</code></li>
 </ul>
 </blockquote>
 <p>上面的定义相当于是一个数组name[SIZE],其长度可以根据需要来变化 </p>
 <blockquote>
-<p>定义一个二维数组 vector &lt; *vector*&lt;*typenamne*&gt; &gt; name<br>vector&lt;*typename*&gt; name[SIZE];</p>
+<p>定义一个二维数组 <code>vector &lt; vector&lt;typenamne&gt; &gt; name  </code><br><code>vector&lt;typename&gt;</code> name[SIZE];</p>
 </blockquote>
-<p>如果<em>typename</em>也是STL容器的话，定义的时候要记得在 <strong>&gt;&gt;</strong> 之间加上空格</p>
+<p>如果 <em>typename</em> 也是STL容器的话，定义的时候要记得在 <strong>&gt;&gt;</strong> 之间加上空格</p>
 <h2 id="2-容器内元素的访问"><a href="#2-容器内元素的访问" class="headerlink" title="2.容器内元素的访问"></a>2.容器内元素的访问</h2><h3 id="1-通过下标访问"><a href="#1-通过下标访问" class="headerlink" title="1.通过下标访问"></a>1.通过下标访问</h3><blockquote>
-<p>和访问普通的数组一样，vector&lt;*typename*&gt; vt，vt[0],vt[1]….</p>
+<p>和访问普通的数组一样，<code>vector&lt;typename&gt; vt，vt[0],vt[1] </code>….</p>
 </blockquote>
 <h3 id="2-通过迭代器访问"><a href="#2-通过迭代器访问" class="headerlink" title="2.通过迭代器访问"></a>2.通过迭代器访问</h3><blockquote>
-<p>创建一个类似于指针的迭代器vector&lt;*typename*&gt;:: it;</p>
+<p>创建一个类似于指针的迭代器<code>vector&lt;typename&gt;:: it;</code></p>
 </blockquote>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt; vt;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;::iterator it; <span class="comment">//创建迭代器</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;</span><br><span class="line">        vt.push_back(i); <span class="comment">//在 vt 的末尾添加元素</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(it = vt.begin();it != vt.end();it++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,*it);</span><br><span class="line">    &#125;<span class="comment">// begin 的作用是取 vt 的首地址，end是取末尾元素后一位的地址</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -195,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/vector/" data-id="cl6p362cv00056sv197ph12ia" data-title="vector" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/vector/" data-id="cl6p3a50r0005g8v1cef0bfv7" data-title="vector" class="article-share-link">Share</a>
       
       
       
