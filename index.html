@@ -71,6 +71,98 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Set" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/11/Set/" class="article-date">
+  <time class="dt-published" datetime="2022-08-11T12:50:44.000Z" itemprop="datePublished">2022-08-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/11/Set/">Set</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Set的常见用法"><a href="#Set的常见用法" class="headerlink" title="Set的常见用法"></a>Set的常见用法</h1><blockquote>
+<p><strong>set</strong> 是一个内部自动有序且不含重复元素的容器，如果需要使用 <strong>set</strong>需要加入头文件 #include &lt;*set*&gt;,还要再头文件下加上一段 <strong>using</strong> <strong>namespace</strong> <strong>std；</strong></p>
+</blockquote>
+<h2 id="1-Set的定义"><a href="#1-Set的定义" class="headerlink" title="1.Set的定义"></a>1.Set的定义</h2><blockquote>
+<p>单独定义一个 <strong>set</strong>；</p>
+<blockquote>
+<ul>
+<li>set&lt;*typename*&gt; name;</li>
+<li>set&lt;*typename*&gt; name[SIZE]; &#x2F;&#x2F;name[0],name[1]都是一个set容器</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="2-set容器内元素的访问"><a href="#2-set容器内元素的访问" class="headerlink" title="2.set容器内元素的访问"></a>2.<strong>set</strong>容器内元素的访问</h2><blockquote>
+<h2 id="set-只能通过迭代器访问元素"><a href="#set-只能通过迭代器访问元素" class="headerlink" title="set 只能通过迭代器访问元素"></a><strong>set</strong> <strong>只能通过迭代器访问元素</strong></h2><ul>
+<li>set&lt;<em>typename*&gt;::iterator it; &#x2F;&#x2F; typename 指的是元素的类型例如：<strong>int</strong>，*<em>char</em></em></li>
+</ul>
+</blockquote>
+<h3 id="除了vector，string之外的STL容器都不支持-it-i-的访问方式"><a href="#除了vector，string之外的STL容器都不支持-it-i-的访问方式" class="headerlink" title="除了vector，string之外的STL容器都不支持 *(it + i) 的访问方式"></a>除了vector，string之外的STL容器都不支持 *(it + i) 的访问方式</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">34</span>,<span class="number">21</span>,<span class="number">25</span>,<span class="number">67</span>,<span class="number">44</span>&#125;;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">5</span>;i++)&#123;</span><br><span class="line">        st.insert(arr[i]); <span class="comment">//将数组arr中的元素都插入了set容器中</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt;::iterator it = st.begin();</span><br><span class="line">    <span class="keyword">for</span>(;it != st.end();it++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,*it); <span class="comment">//元素都被从小到大排好序了</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果为： 21 25 34 44 67</p>
+</blockquote>
+<h2 id="3-Set常用函数"><a href="#3-Set常用函数" class="headerlink" title="3.Set常用函数"></a>3.Set常用函数</h2><h3 id="1-insert"><a href="#1-insert" class="headerlink" title="(1) insert()"></a>(1) insert()</h3><blockquote>
+<p>insert(x) 函数可以将 x 插入到 <strong>set</strong> 容器中<strong>并自动排序和去重</strong> ，时间复杂度为 O(logn) ,其中 n 为set中元素个数。</p>
+</blockquote>
+<h3 id="2-find"><a href="#2-find" class="headerlink" title="(2) find()"></a>(2) find()</h3><blockquote>
+<p> <strong>find(value)</strong> 返回set中对应值为 <strong>value</strong> 的迭代器，找到对应元素的话返回对应元素的值的地址，找不到返回 <strong>st.end()</strong></p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;</span><br><span class="line">        st.insert(i); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,*(st.find(<span class="number">2</span>))); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果为：  2；</p>
+</blockquote>
+<h3 id="3-erase"><a href="#3-erase" class="headerlink" title="(3) erase()"></a>(3) erase()</h3><blockquote>
+<p>erase()有两种使用方法：一种是删除 <strong>set</strong> 中的单个元素，另一种是删除 <strong>set</strong> 某一个区间内的函数， <strong>它们的参数均为元素的地址</strong>；</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;</span><br><span class="line">        st.insert(i); </span><br><span class="line">    &#125;</span><br><span class="line">    st.erase(<span class="number">2</span>); <span class="comment">//将容器中的元素 2 删除了</span></span><br><span class="line">    <span class="keyword">for</span>(it = st.begin();it != st.end();it++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,*it);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出结果为：  1  3  4  5；</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;</span><br><span class="line">        st.insert(i); </span><br><span class="line">    &#125;</span><br><span class="line">    st.erase(st.find(<span class="number">3</span>),st.end()); <span class="comment">//将容器中 3 - 5 的元素都删除了</span></span><br><span class="line">    <span class="keyword">for</span>(it = st.begin();it != st.end();it++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,*it);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-size"><a href="#4-size" class="headerlink" title="(4) size()"></a>(4) size()</h3><blockquote>
+<p>size()函数用来获得元素内的个数，时间复杂度为 O(l)；</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;</span><br><span class="line">        st.insert(i); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,st.size()); <span class="comment">//size 获取 st 容量的元素个数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-clear"><a href="#5-clear" class="headerlink" title="(5) clear()"></a>(5) clear()</h3><blockquote>
+<p>用来清空 <strong>set</strong> 中所有的元素</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt;::iterator it;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">5</span>;i++)&#123;</span><br><span class="line">        st.insert(i); </span><br><span class="line">    &#125;</span><br><span class="line">    st.clear(); <span class="comment">//清空元素</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,st.size());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>输出元素为：0；</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/08/11/Set/" data-id="cl6p1h37w00012wv1c1xtcv60" data-title="Set" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-STL/" rel="tag">C++_STL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Algorithm" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/08/11/Algorithm/" class="article-date">
@@ -185,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/Algorithm/" data-id="cl6p0uap20001bkv1ar1o919r" data-title="Algorithm" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/Algorithm/" data-id="cl6p1h37y00022wv1ff7l29l5" data-title="Algorithm" class="article-share-link">Share</a>
       
       
       
@@ -228,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/newpage/" data-id="cl6p0uap40002bkv1419q958z" data-title="newpage" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/newpage/" data-id="cl6p1h38000042wv18cjpam81" data-title="newpage" class="article-share-link">Share</a>
       
       
       
@@ -281,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/hello-world/" data-id="cl6p0uaoy0000bkv1d7a8d018" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/hello-world/" data-id="cl6p1h37r00002wv19iv4avch" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -316,7 +408,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C-STL/" style="font-size: 10px;">C++_STL</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
+      <a href="/tags/C-STL/" style="font-size: 20px;">C++_STL</a> <a href="/tags/test/" style="font-size: 10px;">test</a>
     </div>
   </div>
 
@@ -336,6 +428,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/08/11/Set/">Set</a>
+          </li>
         
           <li>
             <a href="/2022/08/11/Algorithm/">Algorithm</a>
