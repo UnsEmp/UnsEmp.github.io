@@ -192,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/vector/" data-id="cl6p32uuo0003lgv12ujl0azz" data-title="vector" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/vector/" data-id="cl6p362cv00056sv197ph12ia" data-title="vector" class="article-share-link">Share</a>
       
       
       
@@ -235,14 +235,14 @@
 <p>单独定义一个 <strong>set</strong>；</p>
 <blockquote>
 <ul>
-<li>set<typename> name;</li>
-<li>set<typename> name[SIZE]; &#x2F;&#x2F;name[0],name[1]都是一个set容器</li>
+<li><code>set &lt;typename&gt; name</code>;</li>
+<li><code>set &lt;typename&gt; name[SIZE];  </code>&#x2F;&#x2F;name[0],name[1]都是一个set容器</li>
 </ul>
 </blockquote>
 </blockquote>
 <h2 id="2-set容器内元素的访问"><a href="#2-set容器内元素的访问" class="headerlink" title="2.set容器内元素的访问"></a>2.<strong>set</strong>容器内元素的访问</h2><blockquote>
 <h2 id="set-只能通过迭代器访问元素"><a href="#set-只能通过迭代器访问元素" class="headerlink" title="set 只能通过迭代器访问元素"></a><strong>set</strong> <strong>只能通过迭代器访问元素</strong></h2><ul>
-<li>set<typename>::iterator it; &#x2F;&#x2F; typename 指的是元素的类型例如：<strong>int</strong>，<strong>char</strong></li>
+<li><code>set&lt;typename&gt;::iterator it;  </code>&#x2F;&#x2F; typename 指的是元素的类型例如：<strong>int</strong>，<strong>char</strong></li>
 </ul>
 </blockquote>
 <h3 id="除了vector，string之外的STL容器都不支持-it-i-的访问方式"><a href="#除了vector，string之外的STL容器都不支持-it-i-的访问方式" class="headerlink" title="除了vector，string之外的STL容器都不支持 *(it + i) 的访问方式"></a>除了vector，string之外的STL容器都不支持 *(it + i) 的访问方式</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">34</span>,<span class="number">21</span>,<span class="number">25</span>,<span class="number">67</span>,<span class="number">44</span>&#125;;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">5</span>;i++)&#123;</span><br><span class="line">        st.insert(arr[i]); <span class="comment">//将数组arr中的元素都插入了set容器中</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt;::iterator it = st.begin();</span><br><span class="line">    <span class="keyword">for</span>(;it != st.end();it++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,*it); <span class="comment">//元素都被从小到大排好序了</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -284,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/Set/" data-id="cl6p32uup0004lgv1aoxg13xr" data-title="Set" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/Set/" data-id="cl6p362co00016sv19hsiajlu" data-title="Set" class="article-share-link">Share</a>
       
       
       
@@ -412,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/Algorithm/" data-id="cl6p32uug0000lgv12ccegf4j" data-title="Algorithm" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/Algorithm/" data-id="cl6p362ci00006sv12j3954vi" data-title="Algorithm" class="article-share-link">Share</a>
       
       
       
@@ -455,7 +455,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/newpage/" data-id="cl6p32uuw0009lgv10xuxea22" data-title="newpage" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/newpage/" data-id="cl6p362ct00046sv1fw5d1hi5" data-title="newpage" class="article-share-link">Share</a>
       
       
       
@@ -508,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/hello-world/" data-id="cl6p32uul0001lgv174njabtu" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/hello-world/" data-id="cl6p362cs00036sv1an193zw6" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
