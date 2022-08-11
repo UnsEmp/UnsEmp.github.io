@@ -94,20 +94,20 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="Set的常见用法"><a href="#Set的常见用法" class="headerlink" title="Set的常见用法"></a>Set的常见用法</h1><blockquote>
-<p><strong>set</strong> 是一个内部自动有序且不含重复元素的容器，如果需要使用 <strong>set</strong>需要加入头文件 #include &lt;*set*&gt;,还要再头文件下加上一段 <strong>using</strong> <strong>namespace</strong> <strong>std；</strong></p>
+<p><strong>set</strong> 是一个内部自动有序且不含重复元素的容器，如果需要使用 <strong>set</strong>需要加入头文件 #include &lt;*set*&gt;,还要再头文件下加上一段 <strong>using namespace std；</strong></p>
 </blockquote>
 <h2 id="1-Set的定义"><a href="#1-Set的定义" class="headerlink" title="1.Set的定义"></a>1.Set的定义</h2><blockquote>
 <p>单独定义一个 <strong>set</strong>；</p>
 <blockquote>
 <ul>
-<li>set&lt;*typename*&gt; name;</li>
-<li>set&lt;*typename*&gt; name[SIZE]; &#x2F;&#x2F;name[0],name[1]都是一个set容器</li>
+<li>set<typename> name;</li>
+<li>set<typename> name[SIZE]; &#x2F;&#x2F;name[0],name[1]都是一个set容器</li>
 </ul>
 </blockquote>
 </blockquote>
 <h2 id="2-set容器内元素的访问"><a href="#2-set容器内元素的访问" class="headerlink" title="2.set容器内元素的访问"></a>2.<strong>set</strong>容器内元素的访问</h2><blockquote>
 <h2 id="set-只能通过迭代器访问元素"><a href="#set-只能通过迭代器访问元素" class="headerlink" title="set 只能通过迭代器访问元素"></a><strong>set</strong> <strong>只能通过迭代器访问元素</strong></h2><ul>
-<li>set&lt;<em>typename*&gt;::iterator it; &#x2F;&#x2F; typename 指的是元素的类型例如：<strong>int</strong>，*<em>char</em></em></li>
+<li>set<typename>::iterator it; &#x2F;&#x2F; typename 指的是元素的类型例如：<strong>int</strong>，<strong>char</strong></li>
 </ul>
 </blockquote>
 <h3 id="除了vector，string之外的STL容器都不支持-it-i-的访问方式"><a href="#除了vector，string之外的STL容器都不支持-it-i-的访问方式" class="headerlink" title="除了vector，string之外的STL容器都不支持 *(it + i) 的访问方式"></a>除了vector，string之外的STL容器都不支持 *(it + i) 的访问方式</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;set&gt;</span></span></span><br><span class="line">using namespace <span class="built_in">std</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> arr[<span class="number">5</span>] = &#123;<span class="number">34</span>,<span class="number">21</span>,<span class="number">25</span>,<span class="number">67</span>,<span class="number">44</span>&#125;;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt; st;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>;i &lt; <span class="number">5</span>;i++)&#123;</span><br><span class="line">        st.insert(arr[i]); <span class="comment">//将数组arr中的元素都插入了set容器中</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="type">int</span>&gt;::iterator it = st.begin();</span><br><span class="line">    <span class="keyword">for</span>(;it != st.end();it++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%3d&quot;</span>,*it); <span class="comment">//元素都被从小到大排好序了</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -149,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/Set/" data-id="cl6p1jq9p0000ncv125f0eeit" data-title="Set" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/Set/" data-id="cl6p2vdmk00011gv1c93t6bi2" data-title="Set" class="article-share-link">Share</a>
       
       
       
@@ -277,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/Algorithm/" data-id="cl6p1jq9t0001ncv1d5fmexyq" data-title="Algorithm" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/Algorithm/" data-id="cl6p2vdmf00001gv173m41ifh" data-title="Algorithm" class="article-share-link">Share</a>
       
       
       
@@ -320,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/newpage/" data-id="cl6p1jqa30007ncv10dlq65zp" data-title="newpage" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/newpage/" data-id="cl6p2vdmp00041gv1cd3k4qq6" data-title="newpage" class="article-share-link">Share</a>
       
       
       
@@ -373,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/08/11/hello-world/" data-id="cl6p1jq9x0003ncv1fimx60es" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/08/11/hello-world/" data-id="cl6p2vdmo00031gv15nq48vrp" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
