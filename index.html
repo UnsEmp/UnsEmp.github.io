@@ -27,7 +27,7 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-08-15T07:58:55.000Z" title="2022/8/15 15:58:55">2022-08-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-08-15T12:16:52.233Z" title="2022/8/15 20:16:52">2022-08-15</time></span><span class="level-item">3 minutes read (About 509 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/08/15/css%E6%A0%B7%E5%BC%8F/">css样式</a></h1><div class="content"><h2 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h2><ol>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item is-active" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-08-15T07:58:55.000Z" title="2022/8/15 15:58:55">2022-08-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-08-15T13:18:23.721Z" title="2022/8/15 21:18:23">2022-08-15</time></span><span class="level-item">4 minutes read (About 672 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/08/15/css%E6%A0%B7%E5%BC%8F/">css样式</a></h1><div class="content"><h2 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h2><ol>
 <li><strong>单位与颜色</strong></li>
 </ol>
 <!-- | - | - | -->
@@ -124,6 +124,7 @@
 <li>text-decoration<br><img src="/../images/4.png"><br><img src="/../images/5.png"></li>
 </ul>
 </blockquote>
+<hr>
 <ol start="3">
 <li><strong>文字属性</strong></li>
 </ol>
@@ -161,6 +162,7 @@
 <td><code>bold</code></td>
 </tr>
 </tbody></table>
+<hr>
 <ol start="4">
 <li><strong>背景样式</strong></li>
 </ol>
@@ -188,14 +190,16 @@
 <td><code>repeat</code>(重复填充背景), <code>repeat-x</code>(横向重复填充背景), <code>repeat-y</code>(纵向填充背景), <code>no-repeat</code>(不重复填充背景)</td>
 </tr>
 <tr>
-<td>background</td>
+<td><code>background</code></td>
 <td>背景简写设置顺序</td>
 <td>颜色 图片 repeat</td>
 </tr>
 </tbody></table>
+<hr>
 <ol start="5">
 <li><strong>超链接样式</strong></li>
 </ol>
+<p>当要设置所用超链接样式的时候直接设置 <code>a</code> 标签的样式就好了</p>
 <p>超链接设置具有一定的顺序， <code>a:hover</code> 需要位于 <code>a:link</code>, <code>a:visited</code> 之后进行设置， <code>a:active</code> 需要位于 <code>a:hover</code> 之后</p>
 <table>
 <thead>
@@ -224,6 +228,46 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">text-decoration</span>: none;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: <span class="number">#09f</span>; <span class="comment">/* 浅蓝色 */</span></span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">text-decoration</span>: none;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: red; <span class="comment">/* 红色 */</span></span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">text-decoration</span>: underline;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: chartreuse; <span class="comment">/* 绿色 */</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">font-size</span>: <span class="number">120%</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">text-decoration</span>: none;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: blue; <span class="comment">/* 蓝色 */</span></span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.baidu.com&quot;</span>&gt;</span>a link ~ ~ ~ !<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>普通链接为浅蓝色， 访问过的链接变成蓝色， 鼠标悬停到的链接呈现绿色，并且字体放大 120%，字体下方有下划线，点击的时候变成蓝色，并跳转到百度页面。</p>
+<hr>
+<ol start="6">
+<li><strong>列表</strong></li>
+</ol>
+<p>列表分为 <code>ul</code> (无序列表), <code>ol</code> (有序列表)</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>list-style</code></td>
+<td>所有用于列表的属性，设置一个声明</td>
+</tr>
+<tr>
+<td><code>list-style-image</code></td>
+<td>为列表项标志设置图像</td>
+</tr>
+<tr>
+<td><code>list-style-position</code></td>
+<td>标志的位置</td>
+</tr>
+<tr>
+<td><code>list-style-type</code></td>
+<td>标志的类型</td>
+</tr>
+</tbody></table>
+<hr>
+<ol start="7">
+<li><strong>表格</strong></li>
+</ol>
+<p>表格大小设置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line"></span><br><span class="line">    bored-collapse: collapse; <span class="comment">/* (可以将表格之间的间隔清除, 如下图) */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/../images/6.png" alt="描述collapse用法的图片"></p>
+<p><code>border</code> 设置方式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span>, <span class="selector-tag">td</span>, <span class="selector-tag">th</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#eee</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>css 奇偶选择器见 <a target="_blank" rel="noopener" href="https://www.php.cn/css-tutorial-477973.html">https://www.php.cn/css-tutorial-477973.html</a></p>
 </div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-08-15T05:48:52.000Z" title="2022/8/15 13:48:52">2022-08-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-08-15T06:13:17.850Z" title="2022/8/15 14:13:17">2022-08-15</time></span><span class="level-item">3 minutes read (About 412 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/08/15/css%E9%80%89%E6%8B%A9%E5%99%A8/">css选择器</a></h1><div class="content"><h2 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h2><ol>
 <li>标签选择器</li>
 </ol>
