@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>css网格布局</title>
-      <link href="/2022/08/18/css%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/"/>
-      <url>/2022/08/18/css%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/</url>
+      <title>cssGridLayout</title>
+      <link href="/2022/08/18/cssGridLayout/"/>
+      <url>/2022/08/18/cssGridLayout/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p><strong>网格布局</strong></p><p>CSS 网格布局模块（CSS Grid Layout Module）提供了带有行和列的基于网格的布局系统，它使网页设计变得更加容易，而无需使用浮动和定位。</p><ul><li>Display 属性</li></ul><p>当 HTML 元素的 <code>display</code> 属性设置为 <code>grid</code> 或 <code>inline-grid</code> 时，它就会成为网格容器。</p><ul><li><p>网格列（Grid Columns）</p></li><li><ul><li>网格项的垂直线被称为列。<img src="./../images/gird_row.png"/></li></ul></li><li><p>网隔行（Grid Rows）</p></li><li><ul><li>网格项的水平线被称为行。<img src="./../images/gird_Col.png"/></li></ul></li><li><p>网格间隙（Grid Gaps）</p></li><li><p>每列&#x2F;行之间的间隔称为间隙。</p></li></ul><img src="./../images/gird_Gap.png"><p>您可以通过使用以下属性之一来调整间隙大小：</p><ul><li>grid-column-gap</li><li>grid-row-gap</li><li>grid-gap</li></ul><p>参考自: <a href="https://www.w3school.com.cn/css/css_grid.asp">https://www.w3school.com.cn/css/css_grid.asp</a></p>]]></content>
       
       
       <categories>
