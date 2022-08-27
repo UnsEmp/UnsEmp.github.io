@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>function</title>
+      <link href="/2022/08/27/function/"/>
+      <url>/2022/08/27/function/</url>
+      
+        <content type="html"><![CDATA[<h4 id="c-11-function-用法"><a href="#c-11-function-用法" class="headerlink" title="c++11 function 用法"></a>c++11 function 用法</h4><p><code>function</code>是一个<code>template</code>，定义于头文件<code>functional</code>中。通过<code>function&lt;int(int, int)&gt;</code> 声明一个<code>function</code>类型，它是“接受两个int参数、返回一个int类型”的可调用对象，这里可调用对象可以理解为函数指针（指针指向一个函数，该函数有两个int类型参数，返回int类型，即：<code>int (*p)(int, int)</code>  ）。</p><p>可调用对象：对于一个对象或表达式，如果可以对其使用调用运算符，则称该对象或表达式为可调用对象。</p><p>C++语言中有几种可调用对象：函数、函数指针、lambda表达式、bind创建的对象以及重载了函数调用运算符的类。</p><p>和其他对象一样，可调用对象也有类型。例如，每个lambda有它自己唯一的（未命名）类类型；函数及函数指针的类型则由其返回值类型和实参类型决定。</p><ul><li><ol><li>保存普通函数</li></ol></li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">printA</span><span class="params">(<span class="type">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     cout &lt;&lt; a &lt;&lt; endl;          </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">std::function&lt;<span class="type">void</span>(<span class="type">int</span> a)&gt; func;</span><br><span class="line">func = printA;</span><br><span class="line"><span class="built_in">func</span>(<span class="number">2</span>);   <span class="comment">//2</span></span><br></pre></td></tr></table></figure><ul><li><ol start="2"><li>保存 lambda 函数</li></ol></li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::function&lt;<span class="type">void</span>()&gt; func_1 = []()&#123;cout &lt;&lt; <span class="string">&quot;hello world&quot;</span> &lt;&lt; endl;&#125;;    </span><br><span class="line"><span class="built_in">func_1</span>();  <span class="comment">//hello world</span></span><br></pre></td></tr></table></figure><ul><li><ol start="3"><li>保存成员函数</li></ol></li></ul><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Foo</span>&#123;</span><br><span class="line">    <span class="built_in">Foo</span>(<span class="type">int</span> num) : <span class="built_in">num_</span>(num)&#123;&#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print_add</span><span class="params">(<span class="type">int</span> i)</span> <span class="type">const</span> </span>&#123;cout &lt;&lt; num_ + i &lt;&lt; endl;&#125;</span><br><span class="line">    <span class="type">int</span> num_;  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//保存成员函数</span></span><br><span class="line">std::function&lt;<span class="type">void</span>(<span class="type">const</span> Foo&amp;,<span class="type">int</span>)&gt; f_add_display = &amp;Foo::print_add;</span><br><span class="line"><span class="function">Foo <span class="title">foo</span><span class="params">(<span class="number">2</span>)</span></span>;</span><br><span class="line"><span class="built_in">f_add_display</span>(foo,<span class="number">1</span>);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> c++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> function </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JQuery</title>
       <link href="/2022/08/19/JQuery/"/>
       <url>/2022/08/19/JQuery/</url>
