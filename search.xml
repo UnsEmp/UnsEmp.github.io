@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>计算几何凸包问题</title>
+      <link href="/2022/09/13/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E5%87%B8%E5%8C%85%E9%97%AE%E9%A2%98/"/>
+      <url>/2022/09/13/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E5%87%B8%E5%8C%85%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="凸包问题"><a href="#凸包问题" class="headerlink" title="凸包问题"></a>凸包问题</h1><h2 id="1-什么是凸包？"><a href="#1-什么是凸包？" class="headerlink" title="1.什么是凸包？"></a>1.什么是凸包？</h2><p>简单来说，可以想象在平面中有一些点，这些点的集合为 <strong>X</strong>，我们拿一个橡皮圈撑到最大，尝试套住所有的点，待橡皮圈绷紧后，它会成为一个多边形，这个多边形所有顶点组成的集合便为集合 <strong>X</strong> 的凸包。如图：<br><img src="https://pic3.zhimg.com/80/v2-d79498186fb2a93eac01f554fd415d82_1440w.png"></p><h2 id="2-Graham-扫描法"><a href="#2-Graham-扫描法" class="headerlink" title="2. Graham 扫描法"></a>2. Graham 扫描法</h2><p>先给出算法：</p><blockquote><ul><li><ol><li>找到一个一定在凸包中的初始点，比如最左下的点</li></ol></li><li><ol start="2"><li>按逆时针逐个加入可能在凸包中的点。做法就是先把剩下的点集&gt;按照相对初始点的极角排序，如果极角相同，则按距离排序，近的在前（原因后面解释）</li></ol></li><li><ol start="3"><li>从初始点开始，按顺序不断加入凸包，对于加入的每一个点，判断加入该点后，会不会使凸包呈现一种前一个点往内凹陷的形状，如果是这样的，则从凸包中删除前一个点，继续往前判断（怎么判断形状呢？利用叉乘）</li></ol></li></ul></blockquote><p>下面我来详细解释一下算法实现<br>对点进行排序可以使用 atan，atan2 函数<br>atan函数和atan2函数求角度的区别：</p><blockquote><p>已知两点坐标求角度时，atan函数求角度时无方向（矢量），atan2函数求角度时有方向（矢量）。<br>atan：-90<del>90度<br>atan2：-180</del>180度<br>例如：<br>a（3,1），b（4,2）  方向ab, 求直线角度（与水平坐标线），atan：45°atan2：45°<br>b（4,2），a（3,1）  方向ba, 求直线角度（与水平坐标线）,atan：45°, atan2：-135°</p></blockquote><p>利用叉乘的原理对于平面中两个向量 $\vec{a} &#x3D; (x_a, x_a), \vec{b} &#x3D; (x_b, y_b)$, 他们的叉乘是一个向量，定义为: $\vec{c} &#x3D; \vec{a} \times \vec{b} &#x3D; (0, 0, x_ay_b - x_by_a)$, 向量 $\vec{c}$ 垂直于这个平面，符合右手定则:</p><blockquote><ul><li>$x_ay_b - x_by_a &gt; 0， 则 \vec{b} 相对于 \vec{a} 为顺时针$</li><li>$x_ay_b - x_by_a &lt; 0, 则 \vec{b} 相对于 \vec{a} 为逆时针$</li><li>$x_ay_b - x_by_a &#x3D;&#x3D; 0, 则 \vec{b} 与 \vec{a}共线 $</li></ul></blockquote><p><img src="https://pic1.zhimg.com/80/v2-96e449007f98d3aed3b738c2191184a0_1440w.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> algorithm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> math </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>c++快速读入</title>
+      <link href="/2022/09/12/c-%E5%BF%AB%E9%80%9F%E8%AF%BB%E5%85%A5/"/>
+      <url>/2022/09/12/c-%E5%BF%AB%E9%80%9F%E8%AF%BB%E5%85%A5/</url>
+      
+        <content type="html"><![CDATA[<h3 id="关于c-的快速读入"><a href="#关于c-的快速读入" class="headerlink" title="关于c++的快速读入"></a>关于c++的快速读入</h3><p>每次读入一个整数，可以在数据量较大的时候使用</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="type">int</span> x=<span class="number">0</span>,f=<span class="number">1</span>;<span class="type">char</span> ch=<span class="built_in">getchar</span>();</span><br><span class="line"><span class="keyword">while</span> (ch&lt;<span class="string">&#x27;0&#x27;</span>||ch&gt;<span class="string">&#x27;9&#x27;</span>)&#123;<span class="keyword">if</span> (ch==<span class="string">&#x27;-&#x27;</span>) f=<span class="number">-1</span>;ch=<span class="built_in">getchar</span>();&#125;</span><br><span class="line"><span class="keyword">while</span> (ch&gt;=<span class="string">&#x27;0&#x27;</span>&amp;&amp;ch&lt;=<span class="string">&#x27;9&#x27;</span>)&#123;x=x*<span class="number">10</span>+ch<span class="number">-48</span>;ch=<span class="built_in">getchar</span>();&#125;</span><br><span class="line"><span class="keyword">return</span> x*f;</span><br><span class="line">&#125;                                        </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> tecnology </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Bootstrap响应式布局</title>
       <link href="/2022/09/02/Bootstrap%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/"/>
       <url>/2022/09/02/Bootstrap%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/</url>

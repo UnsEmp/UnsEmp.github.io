@@ -27,7 +27,370 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-08-15T05:48:52.000Z" title="2022/8/15 13:48:52">2022-08-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-08-19T11:02:03.962Z" title="2022/8/19 19:02:03">2022-08-19</time></span><span class="level-item"><a class="link-muted" href="/categories/html/">html</a></span><span class="level-item">3 minutes read (About 412 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/08/15/css%E9%80%89%E6%8B%A9%E5%99%A8/">css选择器</a></h1><div class="content"><h2 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h2><ol>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-08-15T13:54:35.000Z" title="2022/8/15 21:54:35">2022-08-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-08-19T11:00:59.251Z" title="2022/8/19 19:00:59">2022-08-19</time></span><span class="level-item"><a class="link-muted" href="/categories/html/">html</a></span><span class="level-item">3 minutes read (About 477 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/08/15/css%E5%B8%83%E5%B1%80%E4%B8%8E%E5%AE%9A%E4%BD%8D/">css布局与定位</a></h1><div class="content"><ol>
+<li>盒子模型</li>
+</ol>
+<p>页面中的所有元素都能看成一个盒子，占据着一定的页面空间，每个盒子由 <code>context</code> (内容), <code>border</code> (边框), <code>padding</code> (内边距), <code>margin</code> (外边距, <strong>注意!</strong>: 竖直方向会合并，水平方向不会)。<br>如下图是盒子结构示意图<br><img src="/../images/7.png"></p>
+<ol start="2">
+<li><code>overflow</code> 属性</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>hidden</code></td>
+<td>超出部分不可见</td>
+</tr>
+<tr>
+<td><code>scroll</code></td>
+<td>显示滚动条</td>
+</tr>
+<tr>
+<td><code>auto</code></td>
+<td>如果有超出部分就显示滚动条</td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li>border 属性</li>
+</ol>
+<p><strong>注意！</strong> 当图片间有间隙的时候设置 <code>font-size: 0</code>， 即可取消图片间的间隙</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+<th>设置方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>border-width</code></td>
+<td>盒子宽度</td>
+<td><code>px</code>, <code>thin</code>, <code>medium</code>, <code>thick</code></td>
+</tr>
+<tr>
+<td><code>border-style</code></td>
+<td>盒子类型</td>
+<td><code>dashed</code>, <code>dotted</code>, <code>solid</code>, <code>double</code></td>
+</tr>
+<tr>
+<td><code>border-color</code></td>
+<td>颜色</td>
+<td><code>red</code> …</td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#newimg</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#newimg</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">10px</span> dashed <span class="number">#0cf</span>; <span class="comment">/* 像素大小 线条样式 颜色 */</span></span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;<span class="selector-tag">div</span> id=&quot;newimg&quot;&gt;</span><br><span class="line">    &lt;<span class="selector-tag">img</span> <span class="attribute">src</span>=&quot;./images/<span class="number">3in</span>dex_r2_c2<span class="selector-class">.png</span>&quot;/&gt;</span><br><span class="line">    &lt;<span class="selector-tag">img</span> <span class="attribute">src</span>=&quot;./images/<span class="number">3in</span>dex_r2_c2<span class="selector-class">.png</span>&quot;/&gt;</span><br><span class="line">    &lt;<span class="selector-tag">img</span> <span class="attribute">src</span>=&quot;./images/<span class="number">3in</span>dex_r2_c2<span class="selector-class">.png</span>&quot;/&gt;</span><br><span class="line">&lt;/<span class="selector-tag">div</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>下图是上面html代码的效果图<br><img src="/../images/8.png"></p>
+<ol start="3">
+<li>css定位的三种方式<blockquote>
+<ul>
+<li><strong>文件流定位</strong>: 默认从上到下， 从左到右的顺序摆放盒子，元素之间可以通过 <code>display</code> 进行修改转化<blockquote>
+<ul>
+<li><code>block</code>: 独占一行，元素 <code>height</code>, <code>width</code>, <code>margin</code>, <code>padding</code>，都<strong>可以</strong>修改</li>
+<li><code>inline</code>: 不单独占用一行，元素 <code>height</code>, <code>width</code>, <code>margin</code>, <code>padding</code>，<strong>不可以</strong>修改</li>
+<li><code>inline-block</code>: 不单独占用一行，元素 <code>height</code>, <code>width</code>, <code>margin</code>, <code>padding</code>，都可以修改。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<ul>
+<li><strong>浮动定位</strong>: 可以设置并列一行的两个盒子<blockquote>
+<ul>
+<li><code>float</code>: <code>left</code>, <code>right</code></li>
+<li><code>clear</code>: <code>left</code>, <code>right</code>, <code>both</code></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><strong>层定位</strong>: 设置覆盖层面的元素图片</li>
+</ul>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>特点</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>fixed</code></td>
+<td>无</td>
+<td>相对于浏览器定位</td>
+</tr>
+<tr>
+<td><code>relative</code></td>
+<td>保留原位置</td>
+<td>相对于其直接父元素定位</td>
+</tr>
+<tr>
+<td><code>absolute</code></td>
+<td>不保留原位置</td>
+<td>相对于非<code>static</code>类型父元素(若父元素中都是<code>static</code>类型，则取<code>body</code>)进行定位</td>
+</tr>
+<tr>
+<td><code>left</code>, <code>right</code>, <code>top</code>, <code>bottom</code></td>
+<td>无</td>
+<td>设置相对于参照物的距离</td>
+</tr>
+<tr>
+<td><code>z-index</code></td>
+<td>无</td>
+<td>设置网页层面优先级，优先级低的被覆盖</td>
+</tr>
+</tbody></table>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-08-15T07:58:55.000Z" title="2022/8/15 15:58:55">2022-08-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-08-19T11:02:14.994Z" title="2022/8/19 19:02:14">2022-08-19</time></span><span class="level-item"><a class="link-muted" href="/categories/html/">html</a></span><span class="level-item">4 minutes read (About 672 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/08/15/css%E6%A0%B7%E5%BC%8F/">css样式</a></h1><div class="content"><h2 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h2><ol>
+<li><strong>单位与颜色</strong></li>
+</ol>
+<!-- | - | - | -->
+<table>
+<thead>
+<tr>
+<th>单位</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>px</td>
+<td>像素</td>
+</tr>
+<tr>
+<td>em</td>
+<td>1em - 表示一个字符 2em - 表示两个字符，可以自动适应用户所使用的字体</td>
+</tr>
+<tr>
+<td>%</td>
+<td>百分比</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th>颜色</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rgb(x, x, x)</code></td>
+<td>RGB取值，<code>0 - 255</code></td>
+</tr>
+<tr>
+<td><code>rgb(x%, x%, x%)</code></td>
+<td>RGB取值 <code>0% - 255%</code></td>
+</tr>
+<tr>
+<td><code>rgba(x, x, x, x)</code></td>
+<td>多一个参数表示透明度</td>
+</tr>
+<tr>
+<td><code>#rrggbb</code></td>
+<td>十六进制数表示颜色, eg: <code>#ff0000</code></td>
+</tr>
+</tbody></table>
+<hr>
+<ol start="2">
+<li><strong>文本属性</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+<th>取值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>color</code></td>
+<td>文本颜色</td>
+<td><code>red</code>, <code>#f00</code>, <code>RGB(255, 0, 0)</code></td>
+</tr>
+<tr>
+<td><code>letter-spacing</code></td>
+<td>字符间距</td>
+<td><code>2px</code>, <code>-3px</code></td>
+</tr>
+<tr>
+<td><code>line-height</code></td>
+<td>行高</td>
+<td><code>14px</code>, <code>1.5em</code>, <code>120%</code></td>
+</tr>
+<tr>
+<td><code>text-align</code></td>
+<td>对其方式</td>
+<td><code>center</code>, <code>left</code>, <code>right</code>, <code>justify</code></td>
+</tr>
+<tr>
+<td><code>text-decoration</code></td>
+<td>装饰线</td>
+<td><code>none</code>(去除超链接下划线), <code>overline</code>, <code>underline</code>, <code>line-through</code></td>
+</tr>
+<tr>
+<td><code>text-indent</code></td>
+<td>首行缩进</td>
+<td><code>2em</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<ul>
+<li>text-decoration<br><img src="/../images/4.png"><br><img src="/../images/5.png"></li>
+</ul>
+</blockquote>
+<hr>
+<ol start="3">
+<li><strong>文字属性</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+<th>设置方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>font</code></td>
+<td>在一个声明中设置所有字体属性</td>
+<td>font: bold 18px ‘幼圆’</td>
+</tr>
+<tr>
+<td><code>font</code></td>
+<td>字体系列</td>
+<td><code>font-family</code>: “<code>Hiragino</code>“, “<code>Sans GB</code>“…</td>
+</tr>
+<tr>
+<td><code>font-size</code></td>
+<td>字号</td>
+<td><code>14px</code>, <code>120%</code></td>
+</tr>
+<tr>
+<td><code>font-style</code></td>
+<td>斜体</td>
+<td><code>italic</code></td>
+</tr>
+<tr>
+<td><code>font-weight</code></td>
+<td>粗体</td>
+<td><code>bold</code></td>
+</tr>
+</tbody></table>
+<hr>
+<ol start="4">
+<li><strong>背景样式</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+<th>设置方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>background-color</code></td>
+<td>颜色</td>
+<td><code>red</code></td>
+</tr>
+<tr>
+<td><code>background-image</code></td>
+<td>背景图片</td>
+<td><code>url(&quot;logo.jpg&quot;)</code></td>
+</tr>
+<tr>
+<td><code>background-repeat</code></td>
+<td>背景填充格式</td>
+<td><code>repeat</code>(重复填充背景), <code>repeat-x</code>(横向重复填充背景), <code>repeat-y</code>(纵向填充背景), <code>no-repeat</code>(不重复填充背景)</td>
+</tr>
+<tr>
+<td><code>background</code></td>
+<td>背景简写设置顺序</td>
+<td>颜色 图片 repeat</td>
+</tr>
+</tbody></table>
+<hr>
+<ol start="5">
+<li><strong>超链接样式</strong></li>
+</ol>
+<p>当要设置所用超链接样式的时候直接设置 <code>a</code> 标签的样式就好了</p>
+<p>超链接设置具有一定的顺序， <code>a:hover</code> 需要位于 <code>a:link</code>, <code>a:visited</code> 之后进行设置， <code>a:active</code> 需要位于 <code>a:hover</code> 之后</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>a:link</code></td>
+<td>普通的，未被访问的链接</td>
+</tr>
+<tr>
+<td><code>a:visited</code></td>
+<td>已经被访问了的链接</td>
+</tr>
+<tr>
+<td><code>a:hover</code></td>
+<td>鼠标指针悬停的链接</td>
+</tr>
+<tr>
+<td><code>a:active</code></td>
+<td>被点击时的链接</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">text-decoration</span>: none;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: <span class="number">#09f</span>; <span class="comment">/* 浅蓝色 */</span></span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">text-decoration</span>: none;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: red; <span class="comment">/* 红色 */</span></span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">text-decoration</span>: underline;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: chartreuse; <span class="comment">/* 绿色 */</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">font-size</span>: <span class="number">120%</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">text-decoration</span>: none;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: blue; <span class="comment">/* 蓝色 */</span></span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://www.baidu.com&quot;</span>&gt;</span>a link ~ ~ ~ !<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>普通链接为浅蓝色， 访问过的链接变成蓝色， 鼠标悬停到的链接呈现绿色，并且字体放大 120%，字体下方有下划线，点击的时候变成蓝色，并跳转到百度页面。</p>
+<hr>
+<ol start="6">
+<li><strong>列表</strong></li>
+</ol>
+<p>列表分为 <code>ul</code> (无序列表), <code>ol</code> (有序列表)</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>list-style</code></td>
+<td>所有用于列表的属性，设置一个声明</td>
+</tr>
+<tr>
+<td><code>list-style-image</code></td>
+<td>为列表项标志设置图像</td>
+</tr>
+<tr>
+<td><code>list-style-position</code></td>
+<td>标志的位置</td>
+</tr>
+<tr>
+<td><code>list-style-type</code></td>
+<td>标志的类型</td>
+</tr>
+</tbody></table>
+<hr>
+<ol start="7">
+<li><strong>表格</strong></li>
+</ol>
+<p>表格大小设置</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line"></span><br><span class="line">    bored-collapse: collapse; <span class="comment">/* (可以将表格之间的间隔清除, 如下图) */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/../images/6.png" alt="描述collapse用法的图片"></p>
+<p><code>border</code> 设置方式</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">table</span>, <span class="selector-tag">td</span>, <span class="selector-tag">th</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#eee</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>css 奇偶选择器见 <a target="_blank" rel="noopener" href="https://www.php.cn/css-tutorial-477973.html">https://www.php.cn/css-tutorial-477973.html</a></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-08-15T05:48:52.000Z" title="2022/8/15 13:48:52">2022-08-15</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-08-19T11:02:03.962Z" title="2022/8/19 19:02:03">2022-08-19</time></span><span class="level-item"><a class="link-muted" href="/categories/html/">html</a></span><span class="level-item">3 minutes read (About 412 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/08/15/css%E9%80%89%E6%8B%A9%E5%99%A8/">css选择器</a></h1><div class="content"><h2 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h2><ol>
 <li>标签选择器</li>
 </ol>
 <p>通过设计指定<code>body</code>, <code>p</code> 等标签来指定网页样式</p>
@@ -360,20 +723,7 @@
 </div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-08-11T07:05:05.000Z" title="2022/8/11 15:05:05">2022-08-11</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-08-11T12:13:32.534Z" title="2022/8/11 20:13:32">2022-08-11</time></span><span class="level-item">a few seconds read (About 5 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/08/11/newpage/">newpage</a></h1><div class="content"><h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><h2 id="second"><a href="#second" class="headerlink" title="second"></a>second</h2><h3 id="third"><a href="#third" class="headerlink" title="third"></a>third</h3><blockquote>
 <p>some context</p>
 </blockquote>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-08-11T02:23:36.330Z" title="2022/8/11 10:23:36">2022-08-11</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-08-11T12:30:34.080Z" title="2022/8/11 20:30:34">2022-08-11</time></span><span class="level-item">a minute read (About 123 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/08/11/hello-world/">Hello World</a></h1><div class="content"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">Previous</a></div><div class="pagination-next is-invisible is-hidden-mobile"><a href="/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/head.jpg" alt="Unsemp"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Unsemp</p><p class="is-size-6 is-block">My little world</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Chain</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">19</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">7</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/UnsEmp/UnsEmp.github.io" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/UnsEmp/UnsEmp.github.io"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Computer/"><span class="level-start"><span class="level-item">Computer</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Database/"><span class="level-start"><span class="level-item">Database</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/c/"><span class="level-start"><span class="level-item">c++</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/html/"><span class="level-start"><span class="level-item">html</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/tecnology/"><span class="level-start"><span class="level-item">tecnology</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-02T05:02:20.000Z">2022-09-02</time></p><p class="title"><a href="/2022/09/02/Bootstrap%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/">Bootstrap响应式布局</a></p><p class="categories"><a href="/categories/tecnology/">tecnology</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-31T14:03:42.000Z">2022-08-31</time></p><p class="title"><a href="/2022/08/31/html5%E6%96%B0%E7%89%B9%E6%80%A7/">html5新特性</a></p><p class="categories"><a href="/categories/Computer/">Computer</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-30T13:55:34.000Z">2022-08-30</time></p><p class="title"><a href="/2022/08/30/DatabaseOverview/">DatabaseOverview</a></p><p class="categories"><a href="/categories/Database/">Database</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-27T09:07:12.000Z">2022-08-27</time></p><p class="title"><a href="/2022/08/27/function/">function</a></p><p class="categories"><a href="/categories/c/">c++</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-19T10:59:36.000Z">2022-08-19</time></p><p class="title"><a href="/2022/08/19/JQuery/">JQuery</a></p><p class="categories"><a href="/categories/html/">html</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/09/"><span class="level-start"><span class="level-item">September 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/08/"><span class="level-start"><span class="level-item">August 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C-STL/"><span class="tag">C++_STL</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS/"><span class="tag">CSS</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Database/"><span class="tag">Database</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JQuery/"><span class="tag">JQuery</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/function/"><span class="tag">function</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/html/"><span class="tag">html</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/test/"><span class="tag">test</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a><p class="is-size-7"><span>&copy; 2022 Unsemp</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+</div></article></div><nav class="pagination" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">Previous</a></div><div class="pagination-next"><a href="/page/3/">Next</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/head.jpg" alt="Unsemp"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Unsemp</p><p class="is-size-6 is-block">My little world</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Chain</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">Posts</p><a href="/archives"><p class="title">21</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Categories</p><a href="/categories"><p class="title">6</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">Tags</p><a href="/tags"><p class="title">9</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/UnsEmp/UnsEmp.github.io" target="_blank" rel="noopener">Follow</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/UnsEmp/UnsEmp.github.io"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">Links</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">Categories</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Computer/"><span class="level-start"><span class="level-item">Computer</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/Database/"><span class="level-start"><span class="level-item">Database</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/algorithm/"><span class="level-start"><span class="level-item">algorithm</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/c/"><span class="level-start"><span class="level-item">c++</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/html/"><span class="level-start"><span class="level-item">html</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile" href="/categories/tecnology/"><span class="level-start"><span class="level-item">tecnology</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">Recents</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-13T11:01:39.000Z">2022-09-13</time></p><p class="title"><a href="/2022/09/13/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E5%87%B8%E5%8C%85%E9%97%AE%E9%A2%98/">计算几何凸包问题</a></p><p class="categories"><a href="/categories/algorithm/">algorithm</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-12T14:21:39.000Z">2022-09-12</time></p><p class="title"><a href="/2022/09/12/c-%E5%BF%AB%E9%80%9F%E8%AF%BB%E5%85%A5/">c++快速读入</a></p><p class="categories"><a href="/categories/tecnology/">tecnology</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-09-02T05:02:20.000Z">2022-09-02</time></p><p class="title"><a href="/2022/09/02/Bootstrap%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/">Bootstrap响应式布局</a></p><p class="categories"><a href="/categories/tecnology/">tecnology</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-31T14:03:42.000Z">2022-08-31</time></p><p class="title"><a href="/2022/08/31/html5%E6%96%B0%E7%89%B9%E6%80%A7/">html5新特性</a></p><p class="categories"><a href="/categories/Computer/">Computer</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-08-30T13:55:34.000Z">2022-08-30</time></p><p class="title"><a href="/2022/08/30/DatabaseOverview/">DatabaseOverview</a></p><p class="categories"><a href="/categories/Database/">Database</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">Archives</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/09/"><span class="level-start"><span class="level-item">September 2022</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/08/"><span class="level-start"><span class="level-item">August 2022</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">Tags</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C-STL/"><span class="tag">C++_STL</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS/"><span class="tag">CSS</span><span class="tag">9</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Database/"><span class="tag">Database</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JQuery/"><span class="tag">JQuery</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/c/"><span class="tag">c++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/function/"><span class="tag">function</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/html/"><span class="tag">html</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/math/"><span class="tag">math</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/test/"><span class="tag">test</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">Subscribe for updates</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="Subscribe"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Hexo" height="28"></a><p class="is-size-7"><span>&copy; 2022 Unsemp</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
             article: {
                 highlight: {
                     clipboard: true,
